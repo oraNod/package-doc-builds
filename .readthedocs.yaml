@@ -6,9 +6,6 @@ version: 2
 
 build:
   os: ubuntu-lts-latest
-  tools:
-    python: >-
-      3.11
   commands:
   - mkdir -pv "${READTHEDOCS_OUTPUT}"/html/
   - cp -rv docs/* "${READTHEDOCS_OUTPUT}"/html/
