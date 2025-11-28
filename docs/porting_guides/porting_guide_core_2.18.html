@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="readthedocs-addons-api-version" content="1"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ansible-core 2.18 Porting Guide &mdash; Ansible Community Documentation</title>
+  <title>Ansible-core 2.18 Porting Guide &mdash; Ansible Core Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=41de9001" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/ansible.css?v=b54c304f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/ansible.css?v=c5b67dd2" />
       <link rel="stylesheet" type="text/css" href="../_static/antsibull-minimal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/rtd-ethical-ads.css?v=289b023e" />
@@ -23,9 +23,12 @@
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script defer="defer" src="../_static/readthedocs-search.js?v=3efd9cb0"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /><!-- extra head elements for Ansible beyond RTD Sphinx Theme -->
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ansible-core 2.17 Porting Guide" href="porting_guide_core_2.17.html" />
+    <link rel="prev" title="Ansible-core 2.19 Porting Guide" href="porting_guide_core_2.19.html" /><!-- extra head elements for Ansible beyond RTD Sphinx Theme -->
 <script src="https://www.redhat.com/dtm.js"></script>
 
 
@@ -57,7 +60,7 @@
   <img class="DocSiteNav-logo"
     src="../_static/images/Ansible-Mark-RGB_White.png"
     alt="Ansible Logo">
-  <div class="DocSiteNav-title">Ansible Community Documentation</div>
+  <div class="DocSiteNav-title">Ansible Core Documentation</div>
 </a>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
@@ -67,7 +70,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            Ansible
+            Ansible Core
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -82,14 +85,41 @@
               <p class="caption" role="heading"><span class="caption-text">Ansible getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting started with Ansible</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started_ee/index.html">Getting started with Execution Environments</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation, Upgrade &amp; Configuration</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation_guide/index.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guides.html">Ansible Porting Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="core_porting_guides.html">Ansible Core Porting Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.21.html">Ansible-core 2.21 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.20.html">Ansible-core 2.20 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.19.html">Ansible-core 2.19 Porting Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ansible-core 2.18 Porting Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#playbook">Playbook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line">Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecated">Deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules-removed">Modules removed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecation-notices">Deprecation notices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#noteworthy-module-changes">Noteworthy module changes</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Using Ansible</span></p>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plugins">Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#porting-custom-scripts">Porting custom scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#networking">Networking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.17.html">Ansible-core 2.17 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.16.html">Ansible-core 2.16 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.15.html">Ansible-core 2.15 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.14.html">Ansible-core 2.14 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.13.html">Ansible-core 2.13 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.12.html">Ansible-core 2.12 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_core_2.11.html">Ansible-core 2.11 Porting Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting_guide_base_2.10.html">Ansible-base 2.10 Porting Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using Ansible Core</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../inventory_guide/index.html">Building Ansible inventories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../command_guide/index.html">Using Ansible command line tools</a></li>
@@ -100,10 +130,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../os_guide/index.html">Using Ansible on Windows, BSD, and z/OS UNIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tips_tricks/index.html">Ansible tips and tricks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contributing to Ansible</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Ansible Core</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../community/index.html">Ansible Community Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../community/contributions_collections.html">Ansible Collections Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community/contributions.html">ansible-core Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community/advanced_index.html">Advanced Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev_guide/style_guide/index.html">Ansible documentation style guide</a></li>
@@ -111,16 +140,6 @@
 <p class="caption" role="heading"><span class="caption-text">Extending Ansible</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Developer Guide</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Common Ansible Scenarios</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/cloud_guides.html">Legacy Public Cloud Guides</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Network Automation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../network/getting_started/index.html">Network Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../network/user_guide/index.html">Network Advanced Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../network/dev_guide/index.html">Network Developer Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ansible Galaxy</span></p>
 <ul>
@@ -151,7 +170,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Roadmaps</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap/ansible_roadmap_index.html">Ansible Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap/ansible_core_roadmap_index.html">ansible-core Roadmaps</a></li>
 </ul>
 
@@ -162,7 +180,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Ansible</a>
+          <a href="../index.html">Ansible Core</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -170,6 +188,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="core_porting_guides.html">Ansible Core Porting Guides</a></li>
       <li class="breadcrumb-item active">Ansible-core 2.18 Porting Guide</li>
   <li class="wy-breadcrumbs-aside">
             <!-- Remove main index page as it is no longer editable -->
@@ -217,7 +236,7 @@
         msg += 'You are reading documentation for Ansible Core, which contains no plugins except for those in ansible.builtin. For documentation of the Ansible package, go to <a href="https://docs.ansible.com/projects/ansible/latest/">the latest documentation</a>.';
         /* temp - add extra warning about core-2.19. Included in core 2.19 and later releases */
         msg += '<br><p><strong>Important:</strong> The ansible-core 2.19 release has made <b>significant templating changes that might require you to update playbooks and roles</b>. The templating changes enable reporting of numerous problematic behaviors that went undetected in previous releases, with wide-ranging positive effects on security, performance, and user experience. You should validate your content to ensure compatibility with these templating changes before upgrading to ansible-core 2.19. See the <a href="https://docs.ansible.com/projects/ansible/devel/porting_guides/porting_guide_12.html">porting guide</a> to understand where you may need to update your playbooks and roles.';
-      } else if (startsWithOneOf(current_url_path, ["/projects/ansible/latest/", "/projects/ansible/13/"])) {
+      } else if (startsWithOneOf(current_url_path, ["/projects/ansible/latest/", "/projects/ansible/2.20/"])) {
         /* temp extra banner to advertise something */
         banner += extra_banner;
 
@@ -263,7 +282,7 @@
 <p>This section discusses the behavioral changes between <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code> 2.17 and <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code> 2.18.</p>
 <p>It is intended to assist in updating your playbooks, plugins and other parts of your Ansible infrastructure so they will work with this version of Ansible.</p>
 <p>We suggest you read this page along with <a class="reference external" href="https://github.com/ansible/ansible/blob/stable-2.18/changelogs/CHANGELOG-v2.18.rst">ansible-core Changelog for 2.18</a> to understand what updates you may need to make.</p>
-<p>This document is part of a collection on porting. The complete list of porting guides can be found at <a class="reference internal" href="porting_guides.html#porting-guides"><span class="std std-ref">porting guides</span></a>.</p>
+<p>This document is part of a collection on porting. The complete list of porting guides can be found at <a class="reference external" href="https://docs.ansible.com/projects/ansible/2.9/porting_guides/porting_guides.html#porting-guides" title="(in Ansible v2.9)"><span class="xref std std-ref">porting guides</span></a>.</p>
 <nav class="contents" id="topics">
 <p class="topic-title">Topics</p>
 <ul class="simple">
@@ -361,7 +380,10 @@ or <code class="docutils literal notranslate"><span class="pre">ansible.windows.
           </div>
           
 
-<footer>
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="porting_guide_core_2.19.html" class="btn btn-neutral float-left" title="Ansible-core 2.19 Porting Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="porting_guide_core_2.17.html" class="btn btn-neutral float-right" title="Ansible-core 2.17 Porting Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="readthedocs-addons-api-version" content="1"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer Guide &mdash; Ansible Community Documentation</title>
+  <title>Developer Guide &mdash; Ansible Core Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=41de9001" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/ansible.css?v=b54c304f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/ansible.css?v=c5b67dd2" />
       <link rel="stylesheet" type="text/css" href="../_static/antsibull-minimal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/rtd-ethical-ads.css?v=289b023e" />
@@ -23,6 +23,7 @@
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script defer="defer" src="../_static/readthedocs-search.js?v=3efd9cb0"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,7 +60,7 @@
   <img class="DocSiteNav-logo"
     src="../_static/images/Ansible-Mark-RGB_White.png"
     alt="Ansible Logo">
-  <div class="DocSiteNav-title">Ansible Community Documentation</div>
+  <div class="DocSiteNav-title">Ansible Core Documentation</div>
 </a>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
@@ -69,7 +70,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            Ansible
+            Ansible Core
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -84,14 +85,13 @@
               <p class="caption" role="heading"><span class="caption-text">Ansible getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting started with Ansible</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started_ee/index.html">Getting started with Execution Environments</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation, Upgrade &amp; Configuration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation_guide/index.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../porting_guides/porting_guides.html">Ansible Porting Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../porting_guides/core_porting_guides.html">Ansible Core Porting Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Using Ansible</span></p>
+<p class="caption" role="heading"><span class="caption-text">Using Ansible Core</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../inventory_guide/index.html">Building Ansible inventories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../command_guide/index.html">Using Ansible command line tools</a></li>
@@ -102,10 +102,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../os_guide/index.html">Using Ansible on Windows, BSD, and z/OS UNIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tips_tricks/index.html">Ansible tips and tricks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contributing to Ansible</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Ansible Core</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../community/index.html">Ansible Community Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../community/contributions_collections.html">Ansible Collections Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community/contributions.html">ansible-core Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community/advanced_index.html">Advanced Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="style_guide/index.html">Ansible documentation style guide</a></li>
@@ -142,16 +141,6 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Common Ansible Scenarios</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/cloud_guides.html">Legacy Public Cloud Guides</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Network Automation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../network/getting_started/index.html">Network Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../network/user_guide/index.html">Network Advanced Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../network/dev_guide/index.html">Network Developer Guide</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Ansible Galaxy</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../galaxy/user_guide.html">Galaxy User Guide</a></li>
@@ -181,7 +170,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Roadmaps</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap/ansible_roadmap_index.html">Ansible Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap/ansible_core_roadmap_index.html">ansible-core Roadmaps</a></li>
 </ul>
 
@@ -192,7 +180,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Ansible</a>
+          <a href="../index.html">Ansible Core</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -247,7 +235,7 @@
         msg += 'You are reading documentation for Ansible Core, which contains no plugins except for those in ansible.builtin. For documentation of the Ansible package, go to <a href="https://docs.ansible.com/projects/ansible/latest/">the latest documentation</a>.';
         /* temp - add extra warning about core-2.19. Included in core 2.19 and later releases */
         msg += '<br><p><strong>Important:</strong> The ansible-core 2.19 release has made <b>significant templating changes that might require you to update playbooks and roles</b>. The templating changes enable reporting of numerous problematic behaviors that went undetected in previous releases, with wide-ranging positive effects on security, performance, and user experience. You should validate your content to ensure compatibility with these templating changes before upgrading to ansible-core 2.19. See the <a href="https://docs.ansible.com/projects/ansible/devel/porting_guides/porting_guide_12.html">porting guide</a> to understand where you may need to update your playbooks and roles.';
-      } else if (startsWithOneOf(current_url_path, ["/projects/ansible/latest/", "/projects/ansible/13/"])) {
+      } else if (startsWithOneOf(current_url_path, ["/projects/ansible/latest/", "/projects/ansible/2.20/"])) {
         /* temp extra banner to advertise something */
         banner += extra_banner;
 
@@ -289,7 +277,7 @@
            <div itemprop="articleBody">
              
   <section id="developer-guide">
-<span id="id1"></span><h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Link to this heading"></a></h1>
+<span id="core-developer-guide"></span><h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Making Open Source More Inclusive</strong></p>
@@ -307,7 +295,7 @@
 <li><p>I want to figure out if <a class="reference internal" href="developing_modules.html#module-dev-should-you"><span class="std std-ref">developing a module is the right approach</span></a> for my use case.</p></li>
 <li><p>I want to understand <a class="reference internal" href="developing_collections_path.html#developing-collections-path"><span class="std std-ref">what a successful collection creator path looks like</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="developing_collections.html#developing-collections"><span class="std std-ref">develop a collection</span></a>.</p></li>
-<li><p>I want to <a class="reference internal" href="../community/contributing_maintained_collections.html#contributing-maintained-collections"><span class="std std-ref">contribute to an Ansible-maintained collection</span></a>.</p></li>
+<li><p>I want to <a class="reference external" href="https://docs.ansible.com/projects/ansible/12/community/contributing_maintained_collections.html#contributing-maintained-collections" title="(in Ansible v12)"><span class="xref std std-ref">contribute to an Ansible-maintained collection</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="developing_collections_contributing.html#hacking-collections"><span class="std std-ref">contribute to a community-maintained collection</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="migrating_roles.html#migrating-roles"><span class="std std-ref">migrate a role to a collection</span></a>.</p></li>
 </ul>
@@ -321,11 +309,8 @@
 <li><p>I want to <a class="reference internal" href="developing_modules_general.html#developing-modules-general"><span class="std std-ref">get started writing a module</span></a>.</p></li>
 <li><dl class="simple">
 <dt>I want to write a specific kind of module:</dt><dd><ul>
-<li><p>a <a class="reference internal" href="../network/dev_guide/developing_plugins_network.html#developing-modules-network"><span class="std std-ref">network module</span></a></p></li>
+<li><p>a <a class="reference external" href="https://docs.ansible.com/projects/ansible/2.9/network/dev_guide/developing_plugins_network.html#developing-modules-network" title="(in Ansible v2.9)"><span class="xref std std-ref">network module</span></a></p></li>
 <li><p>a <a class="reference internal" href="developing_modules_general_windows.html#developing-modules-general-windows"><span class="std std-ref">Windows module</span></a>.</p></li>
-<li><p>an <a class="reference internal" href="../collections/amazon/aws/docsite/dev_guidelines.html#ansible-collections-amazon-aws-docsite-dev-guide-intro"><span class="std std-ref">Amazon module</span></a>.</p></li>
-<li><p>an <a class="reference external" href="https://github.com/oVirt/ovirt-ansible-collection/blob/master/README-developers.md">oVirt/RHV module</a>.</p></li>
-<li><p>a <a class="reference internal" href="../collections/community/vmware/docsite/dev_guide.html#ansible-collections-community-vmware-docsite-vmware-ansible-devguide"><span class="std std-ref">VMware module</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -341,7 +326,7 @@
 <li><p>I want to <a class="reference internal" href="testing.html#developing-testing"><span class="std std-ref">add tests</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="developing_modules_documenting.html#module-documenting"><span class="std std-ref">document my module</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="ansible_markup.html#ansible-markup"><span class="std std-ref">improve documentation by using Ansible markup</span></a>.</p></li>
-<li><p>I want to <a class="reference internal" href="../network/dev_guide/documenting_modules_network.html#documenting-modules-network"><span class="std std-ref">document my set of modules for a network platform</span></a>.</p></li>
+<li><p>I want to <a class="reference external" href="https://docs.ansible.com/projects/ansible/2.9/network/dev_guide/documenting_modules_network.html#documenting-modules-network" title="(in Ansible v2.9)"><span class="xref std std-ref">document my set of modules for a network platform</span></a>.</p></li>
 <li><p>I want to follow <a class="reference internal" href="developing_modules_best_practices.html#developing-modules-best-practices"><span class="std std-ref">conventions and tips for clean, usable module code</span></a>.</p></li>
 <li><p>I want to <a class="reference internal" href="developing_python_3.html#developing-python-3"><span class="std std-ref">make sure my code runs on Python 2 and Python 3</span></a>.</p></li>
 </ul>
